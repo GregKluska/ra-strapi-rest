@@ -105,6 +105,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson, uploadFields = []) =>
     
     // Determines if there are new files to upload
     const determineUploadFieldNames = params => {
+	    if(params == null) return [];
 	if (!params.data) return [];
 
 	// Check if the field names are mentioned in the uploadFields
